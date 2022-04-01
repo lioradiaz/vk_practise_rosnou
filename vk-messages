@@ -4,23 +4,13 @@ from bs4 import BeautifulSoup
 from .utils import cleanhtml
 
 class Exception_MessagesAPI(Exception):
-    '''
-    Warning:
-    Be carefull, this script may not
-    explain and figure out all Exceptions
-    '''
+  
     def __init__(self, message, errors):
         super().__init__(message)
         self.errors = f'MessagesAPIexception[{errors}]'
 
 class MessagesAPI():
-    '''
-    Warning:
-    Look carefull, selecting wrong authorization
-    (two_factor or non-two_factor) will collapse script.
-    when selecting this script will not
-    explain and figure out all Exceptions
-    '''
+   
     def __init__(self, login, password, two_factor=False, cookies_save_path=''):
         self.login = login
         self.password = str(password.encode('UTF-8')).replace('\\x', '%')[2:-1]
